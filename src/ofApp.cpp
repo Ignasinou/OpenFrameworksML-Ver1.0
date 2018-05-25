@@ -270,6 +270,15 @@ void ofApp::update(){
                 }
             }
         }
+        if(msg.getAddress()=="/wekinator/control/deleteAllExamples"){
+     
+            for (int n = 0; n < modelsData.size(); n++){
+                modelsData[n].clear(); // Clear data saved
+                modelsLabel[n].clear(); // Clear labels saved
+                ann[n].release(); // Clear trainning set saved for ANN only!
+            }
+            cout << "All examples are delated" << endl;
+        }
     }
 }
 
